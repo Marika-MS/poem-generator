@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css"/>
     <title>AI Poem Generator</title>
 </head>
@@ -12,20 +13,18 @@
     </header>
 
     <main>
-        <form>
-            <input type="text" placeholder="Enter topic"
-             autofocus
+        <form id="poem-generator-form">
+            <input type="text" 
+            placeholder="Enter topic"
+            autofocus
             required
             autocomplete="off"
             class="instructions"/>
-            <input type="submit"
-           />
+
+            <input type="submit" class="submit-button"/>
 
         </form>
-        <div class="poem">
-            Go placidly amid the noise and the haste,
-            <br/> 
-            and remember what peace there may be in silence. As far as possible, without surrender, be on good terms with all persons.
+        <div class="poem" id="poem">
         </div>
 
 
