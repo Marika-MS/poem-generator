@@ -79,6 +79,9 @@ form {
   
 }
 
+.poem strong {
+    color: #632CE8;
+}
 
 footer {
     text-align: center;
