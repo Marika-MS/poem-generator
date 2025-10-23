@@ -15,10 +15,15 @@ function generatePoem(event) {
 
     let instructionsInput = document.querySelector("#user-instructions");
     let apiKey = "960t74of2af71309951ecd4291baaaa0";
-    let context = "You are a romantic poem expert and love to write short poems. Your mission is to generate a 4 line poem only in basic HTML. Make sure to follow the user instructions. Sign the poem with 'SheCodes AI' inside <strong> element";
+    let context = 
+    "You are a romantic Poem expert and love to write short poems. Your mission is to generate a 4 line poem only in basic HTML. Make sure to follow the user instructions. Sign the poem with SheCodes AI inside <strong> element.";
     let prompt = `User instructions: Generate a poem about home ${instructionsInput.value}`;
     let apiUrl =
       `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+    let poemElement = document.querySelector("#poem");
+poemElement.classList.remove("hidden")
+poemElement.innerHTML = `<div class="generating">⏳Generating a poem about ${instructionsInput.value}</div>`;
 
       
 console.log("Generating poem");
@@ -31,5 +36,5 @@ axios.get(apiUrl).then(displayPoem);
 
 }
 
-let poemFormElement = document.querySelector ("#poem-generator-form")
+let poemFormElement = document.querySelector ("#poem-generator-form");
 poemFormElement.addEventListener("submit", generatePoem);
